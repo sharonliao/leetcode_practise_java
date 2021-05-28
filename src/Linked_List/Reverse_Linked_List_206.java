@@ -12,19 +12,32 @@ public class Reverse_Linked_List_206 {
         if(head == null || head.next == null){
             return head;
         }
-        ListNode pre = head;
-        ListNode temp_next = pre.next;
-        ListNode follow = null;
-        while(temp_next != null){
-            follow = temp_next;
-            temp_next = follow.next;
-            //sawp pre node and follow node
-            follow.next = pre;
-            //move to next node
-            pre = follow;
+
+//        ListNode pre = head;
+//        ListNode temp_next = pre.next;
+//        ListNode follow = null;
+//        while(temp_next != null){
+//            follow = temp_next;
+//            temp_next = follow.next;
+//            //sawp pre node and follow node
+//            follow.next = pre;
+//            //move to next node
+//            pre = follow;
+//        }
+//        head.next = null;
+//        return follow;
+
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode nextTemp = null;
+        while(curr != null){
+            nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        head.next = null;
-        return follow;
+        return prev;
+
     }
 
     public ListNode createAList(int length){
