@@ -3,7 +3,7 @@ package stack_queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Implement_Stack_using_Queues_232 {
+public class Implement_Stack_using_Queues_225 {
     /**
      * Your MyStack object will be instantiated and called as such:
      * MyStack obj = new MyStack();
@@ -17,7 +17,7 @@ public class Implement_Stack_using_Queues_232 {
 
     Queue<Integer> curQ ;
     Queue<Integer> backupQ ;
-    public Implement_Stack_using_Queues_232() {
+    public Implement_Stack_using_Queues_225() {
         curQ = new LinkedList<>();
         backupQ = new LinkedList<>();
 
